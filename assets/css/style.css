@@ -1,0 +1,153 @@
+/* AI残業部 — 共通スタイル
+   方針: 夜の仕事場を思わせる濃紺ベース＋ティールの差し色。読みやすさ優先の1カラム。 */
+
+:root {
+  --bg: #101623;
+  --surface: #182236;
+  --surface-soft: #1e2c46;
+  --ink: #e8ecf3;
+  --ink-soft: #a7b2c6;
+  --line: #2c3c5c;
+  --accent: #2dd4bf;
+  --accent-ink: #0b2e2a;
+  --link: #7dd3fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Noto Sans JP", sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+a { color: var(--link); }
+a:hover { text-decoration: none; }
+
+/* ヘッダー */
+.site-header {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+  padding: 28px 0 18px;
+  margin-bottom: 36px;
+}
+.site-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+}
+.site-tagline {
+  margin: 4px 0 12px;
+  color: var(--accent);
+  font-size: 14px;
+}
+.site-nav a {
+  margin-right: 16px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.site-nav a:hover { color: var(--accent); }
+
+/* 見出し */
+h1, h2, h3 { line-height: 1.5; }
+.post-title, .page-title { font-size: 26px; margin: 0 0 8px; }
+.post h2, .page h2 {
+  font-size: 21px;
+  margin: 40px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent);
+}
+.post h3, .page h3 { font-size: 18px; margin: 28px 0 8px; }
+
+.post-meta { color: var(--ink-soft); font-size: 13px; margin: 0 0 20px; }
+
+/* コード・表 */
+code {
+  background: var(--surface-soft);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.92em;
+}
+pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 14px 16px;
+  overflow-x: auto;
+}
+pre code { background: transparent; padding: 0; }
+.post table, .page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 14.5px;
+  background: var(--surface);
+}
+.post th, .post td, .page th, .page td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.post th, .page th { background: var(--surface-soft); font-weight: 600; }
+
+/* FAQ・関連記事・一覧 */
+.faq { margin-top: 44px; }
+.faq-item h3 { margin-bottom: 4px; }
+.faq-item p { margin-top: 0; }
+.related { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+.related ul, .post-list { list-style: none; padding: 0; }
+.related li, .post-list li { margin: 8px 0; }
+.post-list-meta { display: block; font-size: 12.5px; color: var(--ink-soft); }
+.series-list { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 8px; }
+
+/* トップページ */
+.intro h1 { font-size: 30px; margin-bottom: 6px; }
+.intro-slogan {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 14px;
+}
+.series-block, .channel-block {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 20px 12px;
+  margin: 16px 0;
+}
+.series-block h3, .channel-block h3 { margin-top: 14px; }
+.channel-list { list-style: none; padding: 0; }
+.channel-list li { margin: 10px 0; }
+.channel-list .channel-desc { display: block; font-size: 13px; color: var(--ink-soft); }
+
+/* フッター */
+.site-footer {
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+  padding: 22px 0 34px;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+.footer-nav a { margin-right: 16px; color: var(--ink-soft); text-decoration: none; }
+.footer-note { margin: 12px 0 4px; }
+.copyright { margin: 0; }
+
+img { max-width: 100%; height: auto; }
+
+/* 写真 */
+.hero-photo { margin: 20px 0 24px; }
+.hero-photo img { display: block; border-radius: 6px; }
+.page-body img { display: block; border-radius: 6px; margin: 20px 0; }
