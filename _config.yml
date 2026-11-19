@@ -1,0 +1,56 @@
+# AI残業部 — サイト設定（Jekyll / GitHub Pages）
+# 状態: ソース構築のみ。未公開。DNS設定・公開は行っていない。
+#
+# 【カスタムドメイン適用時のメモ（aizangyobu.com は取得済み。今回は適用しない）】
+# 1. 下の url を有効化し、baseurl は "" のままにする:
+#      url: "https://aizangyobu.com"
+# 2. リポジトリ直下に CNAME ファイルを置き、中身を1行だけにする:
+#      aizangyobu.com
+#    （今回は CNAME ファイル自体を作成しない。適用時に新規作成すること）
+# 3. DNS側で GitHub Pages 向けレコードを設定する（この作業は別途、公開判断の後に行う）。
+# 4. 適用後に Search Console / GA の登録と XML サイトマップの確認を行う（戦略文書 S6）。
+
+title: AI残業部
+tagline: 残業は、AIがする。
+description: "残業は、AIがする。AI残業部は、Claude Codeで業務をAI駆動化する実践メディアです。誰でも使える活用術（実際に作った仕組み）と、安全に任せるためのルールを、結論先行・一次情報つきで発信します。"
+lang: ja_JP
+author: AI残業部 編集部
+
+# カスタムドメイン未適用のため url は空。適用時は上のメモに従って設定する。
+url: ""
+baseurl: ""
+
+# GA4測定ID（G-XXXXXXXXXX）。未設定の間は計測タグを出力しない
+ga4_id: ""
+
+markdown: kramdown
+permalink: /articles/:title/
+
+# 公開ビルドに含めないファイル（リポジトリ内の説明・作業記録用）
+exclude:
+  - README.md
+  - BUILD確認_2026-11-19.md
+
+# シリーズ（連載）4分類。トップページとヘッダーの並びもこの順
+series_order:
+  - 今夜の残業代行
+  - 代行前の安全確認
+  - 朝には終わってた
+  - 部室の道具箱
+
+# 外部チャネル（エンティティ統一のため _config を単一の参照元にする）
+channels:
+  note: "https://note.com/aizangyobu"
+  zenn_book: "https://zenn.dev/aizangyobu/books/ai-zangyo-claude-code"
+  zenn: "https://zenn.dev/aizangyobu"
+  x: "https://x.com/AiZangyobucho"
+  booth: "https://ai-zangyobu.booth.pm/"
+  suzuri: "https://suzuri.jp/aizangyobu"
+  youtube: "https://www.youtube.com/@aizangyobu"
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
