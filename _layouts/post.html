@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-meta">
+    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y年%-m月%-d日" }}</time>
+    {% if page.categories %}／ {{ page.categories | join: "・" }}{% endif %}
+    {% if page.difficulty %}／ 難易度: {{ page.difficulty }}{% endif %}
+    {% if page.updated %}（更新: {{ page.updated | date: "%Y年%-m月%-d日" }}）{% endif %}
+  </p>
+
+  <div class="post-body">
+    {{ content }}
+  </div>
+
+  {% if page.faq and page.faq.size > 0 %}
+  <section class="faq">
+    <h2>よくある質問</h2>
+    {% for item in page.faq %}
+    <div class="faq-item">
+      <h3>{{ item.q }}</h3>
+      <p>{{ item.a }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  {% endif %}
+
+  {% if page.categories %}
+  {% assign primary = page.categories | first %}
+  {% assign related = site.posts | where_exp: "p", "p.categories contains primary" | where_exp: "p", "p.url != page.url" %}
+  {% if related.size > 0 %}
+  <nav class="related">
+    <h2>同じシリーズの記事</h2>
+    <ul>
+      {% for p in related limit: 5 %}
+      <li><a href="{{ p.url | relative_url }}">{{ p.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}
+  {% endif %}
+</article>
