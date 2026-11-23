@@ -2,6 +2,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}</title>
 <meta name="description" content="{{ page.description | default: site.description | strip_newlines }}">
+<link rel="icon" href="{{ '/assets/favicon.png' | relative_url }}" type="image/png">
+<meta property="og:title" content="{% if page.title %}{{ page.title }} | {{ site.title }}{% else %}{{ site.title }} — {{ site.tagline }}{% endif %}">
+<meta property="og:description" content="{{ page.description | default: site.description | strip_newlines }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}/assets/images/hero-night-laptop.jpg">
 <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 {% if site.ga4_id and site.ga4_id != "" %}
 <!-- Google Analytics 4 -->
@@ -45,3 +50,4 @@
 }
 </script>
 {% endif %}
+
